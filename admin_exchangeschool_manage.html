@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <link href="css/admin_exchangeschool_manage.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="bootstrap-select/dist/css/bootstrap-select.css">
+
+    <title>交換學校</title>
+    <script> 
+        function showhidediv(id) {
+            try {
+                //先捉id='sbtitle'這個node
+                //var sbtitle=document.getElementById('sbtitle');
+                //捉sbtitle下所有的Node一個一個做判斷
+                var ar = document.getElementById("sbtitle").getElementsByTagName("div");
+                for (var i = 0; i < ar.length; i++) {
+                    //沒設id的不處理，跳下一個
+                    if (ar[i].id == '') continue;
+                    if (ar[i].id == id) {
+                        if (ar[i].style.display == 'block') {
+                            ar[i].style.display = 'none';
+                        } else {
+                            ar[i].style.display = 'block';
+                        }
+                    }
+                    else {
+                        ar[i].style.display = 'none';
+                    }
+                }
+            } catch (e) { }
+        }
+
+    </script>
+    <script>
+        function showMessage() {
+            alert("資料已新增");
+        }
+    </script>
+</head>
+
+<body>
+    <br>
+    <h1>管理者專區</h1>
+    <br>
+    <br>
+    <div>
+        <p>
+
+            <i class="far fa-list-alt">
+
+            </i>&nbsp;&nbsp;交換學校列表</p>
+    </div>
+
+    <div id="sbtitle">
+        <div class="button_click">
+            <a href="#" class="btn btn-info" role="button" onclick='showhidediv("a1");'>新增學校資料</a>
+            <div id="a1" style="display:none;">
+                <form type="post">
+                    <table align="center" id="pop">
+                        <tr>
+                            <td>國家/地區:
+                                <br>
+                                <select name="location" class="selectpicker">
+                                    <option value="china">亞洲 - 大陸地區</option>
+                                    <option value="hongkong">亞洲 - 香港</option>
+                                    <option value="macau">亞洲 - 澳門</option>
+                                    <option value="korea">亞洲 - 韓國</option>
+                                    <option value="mongolia">亞洲 - 蒙古</option>
+                                    <option value="japan">亞洲 - 日本</option>
+                                    <option value="indonesia">亞洲 - 印尼</option>
+                                    <option value="india">亞洲 - 印度</option>
+                                    <option value="thailand">亞洲 - 泰國</option>
+                                    <option value="vietnam">亞洲 - 越南</option>
+                                    <option value="malaysia">亞洲 - 馬來西亞</option>
+                                    <option value="philippines">亞洲 - 菲律賓</option>
+                                    <option value="singapore">亞洲 - 新加坡</option>
+                                    <option value="asianother">亞洲 - 其他</option>
+                                    <option value="america">美洲 - 美國</option>
+                                    <option value="canada">美洲 - 加拿大</option>
+                                    <option value="southamerica">中南美洲地區</option>
+                                    <option value="austria">歐洲 - 奧地利</option>
+                                    <option value="portugal">歐洲 - 葡萄牙</option>
+                                    <option value="belgium">歐洲 - 比利時</option>
+                                    <option value="spain">歐洲 - 西班牙</option>
+                                    <option value="hungary">歐洲 - 匈牙利</option>
+                                    <option value="ireland">歐洲 - 愛爾蘭</option>
+                                    <option value="italy">歐洲 - 義大利</option>
+                                    <option value="vatican">歐洲 - 梵蒂岡</option>
+                                    <option value="czechrepublic">歐洲 - 捷克</option>
+                                    <option value="germany">歐洲 - 德國</option>
+                                    <option value="danmark">歐洲 - 丹麥</option>
+                                    <option value="finland">歐洲 - 芬蘭</option>
+                                    <option value="france">歐洲 - 法國</option>
+                                    <option value="england">歐洲 - 英國</option>
+                                    <option value="holland">歐洲 - 荷蘭</option>
+                                    <option value="poland">歐洲 - 波蘭</option>
+                                    <option value="greek">歐洲 - 瑞典</option>
+                                    <option value="slovakrepublic">歐洲 - 斯洛伐克</option>
+                                    <option value="croatia">歐洲 - 克羅埃西亞</option>
+                                    <option value="republicofslovenia">歐洲 - 斯洛維尼亞</option>
+                                    <option value="europeother">歐洲 - 其他</option>
+                                    <option value="australia">大洋洲 - 澳洲</option>
+                                    <option value="newzealand">大洋洲 - 紐西蘭</option>
+                                    <option value="oceaniaother">大洋洲 - 其他</option>
+                                    <option value="africa">非洲地區</option>
+                                </select>
+                            </td>
+                            <td>
+
+                                學校名稱:
+                                <br>
+                                <input type="text" class="form-control" required>
+                            </td>
+
+                            <td>
+                                <div class="col-xs-12">
+                                    托福總成績 TOEFL iBT
+                                    <br>
+                                    <input type="text" class="form-control" size="1" maxlength="3">
+                                </div>
+                            </td>
+
+
+                        </tr>
+                        <tr>
+                            <td>
+                                限制系所:
+                                <br>
+                                <select name="classname" class="selectpicker" multiple>
+                                    <option value="y0">無</option>
+                                    <optgroup label="文學院" data-max-options="2">
+                                        <option value="a0">文學院(全院)</option>
+                                        <option value="a1">中國文學系</option>
+                                        <option value="a2">歷史學系</option>
+                                        <option value="a3">哲學系</option>
+                                    </optgroup>
+                                    <optgroup label="藝術學院" data-max-options="3">
+                                        <option value="b0">藝術學院(全院)</option>
+                                        <option value="b1">音樂學系</option>
+                                        <option value="b2">應用美術學系</option>
+                                        <option value="b3">景觀設計學系</option>
+                                        <option value="b4">藝術與文化創意學士學位學程</option>
+                                    </optgroup>
+                                    <optgroup label="傳播學院" data-max-options="4">
+                                        <option value="c0">傳播學院(全院)</option>
+                                        <option value="c1">影像傳播學系</option>
+                                        <option value="c2">新聞傳播學系</option>
+                                        <option value="c3">廣告傳播學系</option>
+                                        <option value="c4">大眾傳播學研究所</option>
+                                        <option value="c5">大眾傳播學士學位學程</option>
+                                    </optgroup>
+                                    <optgroup label="教育學院" data-max-options="4">
+                                        <option value="d0">教育學院(全院)</option>
+                                        <option value="d1">體育學系</option>
+                                        <option value="d2">圖書資訊學系</option>
+                                        <option value="d3">教育領導與發展研究所</option>
+                                        <option value="d4">教育領導與科技發展學士學位學程</option>
+                                        <option value="d5">運動休閒管理學士學位學程</option>
+                                    </optgroup>
+                                    <optgroup label="醫學院" data-max-options="8">
+                                        <option value="e0">醫學院(全院)</option>
+                                        <option value="e1">醫學系</option>
+                                        <option value="e2">護理學系</option>
+                                        <option value="e3">公共衛生學系</option>
+                                        <option value="e4">臨床心理學系</option>
+                                        <option value="e5">職能治療學系</option>
+                                        <option value="e6">呼吸治療學系</option>
+                                        <option value="e7">生物醫學暨藥學研究所</option>
+                                        <option value="e8">跨專業長期照護碩士學位學程</option>
+                                        <option value="e9">生物醫學海量資料分析碩士學位學程</option>
+                                        <option value="e10">生技醫藥博士學位學程</option>
+                                    </optgroup>
+                                    <optgroup label="理工學院" data-max-options="8">
+                                        <option value="f0">理工學院(全院)</option>
+                                        <option value="f1">數學系</option>
+                                        <option value="f2">物理學系</option>
+                                        <option value="f3">化學系</option>
+                                        <option value="f4">生命科學系</option>
+                                        <option value="f5">資訊工程學系</option>
+                                        <option value="f6">電機工程學系</option>
+                                        <option value="f7">醫學資訊與創新應用學士學位學程</option>
+                                        <option value="f8">應用科學與工程研究所博士班</option>
+                                        <option value="f9">軟體工程與數位創意學士學位學程</option>
+                                    </optgroup>
+                                    <optgroup label="外語學院" data-max-options="6">
+                                        <option value="g0">外語學院(全院)</option>
+                                        <option value="g1">英國語文學系</option>
+                                        <option value="g2">德語語文學系</option>
+                                        <option value="g3">法國語文學系</option>
+                                        <option value="g4">西班牙語文學系</option>
+                                        <option value="g5">日本語文學系</option>
+                                        <option value="g6">義大利語文學系</option>
+                                        <option value="g7">跨文化研究所</option>
+                                    </optgroup>
+                                    <optgroup label="民生學院" data-max-options="4">
+                                        <option value="h0">民生學院(全院)</option>
+                                        <option value="h1">兒童與家庭學系、所</option>
+                                        <option value="h2">餐旅管理學系、所</option>
+                                        <option value="h3">食品科學系</option>
+                                        <option value="h4">營養科學系</option>
+                                        <option value="h5">食品營養博士學位學程</option>
+                                    </optgroup>
+                                    <optgroup label="法律學院" data-max-options="2">
+                                        <option value="i0">法律學院(全院)</option>
+                                        <option value="i1">法律學系、所</option>
+                                        <option value="i2">財經法律學系、所</option>
+                                        <option value="i3">學士後法律學系</option>
+                                    </optgroup>
+                                    <optgroup label="社會科學院" data-max-options="6">
+                                        <option value="j0">社會科學院(全院)</option>
+                                        <option value="j1">社會學系、所</option>
+                                        <option value="j2">社會工作學系、所</option>
+                                        <option value="j3">經濟學系、所</option>
+                                        <option value="j4">宗教學系、所</option>
+                                        <option value="j5">心理學系、所</option>
+                                        <option value="j6">天主教研修學士學位學程</option>
+                                        <option value="j7">非營利組織管理碩士學位學程 (碩專)</option>
+                                    </optgroup>
+                                    <optgroup label="管理學院" data-max-options="11">
+                                        <option value="k0">管理學院(全院)</option>
+                                        <option value="k1">企業管理學系</option>
+                                        <option value="k2">會計學系</option>
+                                        <option value="k3">統計資訊學系</option>
+                                        <option value="k4">金融與國際企業學系</option>
+                                        <option value="k5">資訊管理學系</option>
+                                        <option value="k6">商學研究所</option>
+                                        <option value="k7">科技管理碩士學位學程</option>
+                                        <option value="k8">國際創業與經營管理碩士學位學程</option>
+                                        <option value="k9">三邊雙聯國際創業與經營管理碩士學位學程</option>
+                                        <option value="k10">國際經營管理碩士班</option>
+                                        <option value="k11">社會企業碩士學位學程</option>
+                                        <option value="k12">商業管理學士學位學程</option>
+                                    </optgroup>
+                                    <optgroup label="織品服裝學院" data-max-options="2">
+                                        <option value="l0">織品服裝學院(全院)</option>
+                                        <option value="l1">織品服裝學系</option>
+                                        <option value="l2">博物館學研究所</option>
+                                        <option value="l3">品牌與時尚經營管理碩士學位學程</option>
+                                    </optgroup>
+                                    <optgroup label="進修部" data-max-options="18">
+                                        <option value="m0">進修部(全院)</option>
+                                        <option value="m1">進修部-中國文學系</option>
+                                        <option value="m2">進修部-歷史學系</option>
+                                        <option value="m3">進修部-哲學系</option>
+                                        <option value="m4">進修部-應用美術學系</option>
+                                        <option value="m5">進修部-圖書資訊學系</option>
+                                        <option value="m6">進修部-英國語文學系</option>
+                                        <option value="m7">進修部-日本語文學系</option>
+                                        <option value="m8">進修部-餐旅管理學系</option>
+                                        <option value="m9">進修部-法律學系</option>
+                                        <option value="m10">進修部-經濟學系</option>
+                                        <option value="m11">進修部-宗教學系</option>
+                                        <option value="m12">進修部-藝術與文化創意學士學位學程</option>
+                                        <option value="m13">進修部-大眾傳播學士學位學程</option>
+                                        <option value="m14">進修部-運動休閒管理學士學位學程</option>
+                                        <option value="m15">進修部-軟體工程與數位創意學士學位學程</option>
+                                        <option value="m16">進修部-商業管理學士學位學程</option>
+                                        <option value="m17">進修部-全人教育課程中心進修組</option>
+                                        <option value="m18">進修部-人文社會服務進修學士學位學程</option>
+                                        <option value="m19">進修部-長期照護與健康管理進修學士學位學程</option>
+                                    </optgroup>
+                                </select>
+                                <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+                                <script type="text/javascript" src="js/bootstrap.min.js"></script>
+                                <script type="text/javascript" src="bootstrap-select/dist/js/bootstrap-select.js"></script>
+                                <script>
+                                    $(".selectpicker").selectpicker();
+                                    $(".bootstrap-select").click(function () {
+                                        $(this).addClass("open");
+                                    });
+                                    $(document).click(function () {
+                                        $(".bootstrap-select").removeClass("open");
+                                    });
+                                    $(".bootstrap-select").click(function (e) {
+                                        e.stopPropagation();
+                                    });
+                                </script>
+                            </td>
+                            <td>
+                                <div class="col-xs-7">
+                                    限制總平均分數:
+                                    <input type="text" class="form-control" maxlength="4" required>
+                                </div>
+                                <div class="col-xs-5">
+                                    限制人數:
+                                    <br>
+                                    <input type="text" class="form-control" maxlength="2" size="1" required>
+                                </div>
+                            </td>
+
+
+
+                            <td>
+                                <div class="col-xs-6">
+                                    聽:
+                                    <br>
+                                    <input type="text" class="form-control" maxlength="2" size="1">
+                                </div>
+                                <div class="col-xs-6">
+                                    &nbsp;&nbsp;說:
+                                    <br>
+                                    <input type="text" class="form-control" maxlength="2" size="1">
+                                </div>
+                            </td>
+                            <td rowspan="3">&nbsp;
+                                <button type="reset" class="btn btn-warning">清除</button>
+                                <br>
+                                <br>
+                                <button type="submit" class="btn btn-success" onclick="showMessage()">送出</button>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+
+                                限制學制:
+                                <br>
+                                <select name="property" class="selectpicker" multiple>
+                                    <option>無</option>
+                                    <option>學士班</option>
+                                    <option>碩士班</option>
+                                    <option>博士班</option>
+                                    <option>碩士在職專班</option>
+                                    <option>學士班在職生</option>
+                                    <option>進修學士班</option>
+                                    <option>學士學位學程</option>
+                                </select>
+                            </td>
+                            <td>
+                                僅收外籍生:
+                                <select name="property" class="selectpicker">
+                                    <option>是</option>
+                                    <option>否</option>
+
+                                </select>
+
+                            </td>
+                            <td>
+                                <div class="col-xs-6">
+                                    讀:
+                                    <br>
+                                    <input type="text" class="form-control" maxlength="2" size="1">
+                                </div>
+                                <div class="col-xs-6">
+                                    寫:
+                                    <br>
+                                    <input type="text" class="form-control" maxlength="2" size="1">
+                                </div>
+                            </td>
+
+                        </tr>
+
+                    </table>
+                </form>
+
+            </div>
+        </div>
+        <br>
+
+        <div>
+            <table border="1" align="center">
+                <tr>
+                    <th>學校代碼</th>
+                    <th>國家/地區</th>
+                    <th>學校名稱</th>
+                    <th>名額</th>
+                    <th>狀態</th>
+                    <th>資料</th>
+                    <th>功能</th>
+                </tr>
+                <tr>
+                    <td>001</td>
+                    <td>美國</td>
+                    <td>加州州立大學北嶺分校
+                        <br> California State University, Northridge</td>
+                    <td>5</i>
+                    </td>
+                    <td>
+                        <span class="yes">可申請</span>
+                    </td>
+                    <td>
+                        <a href="https://www.csun.edu/">
+                            <i class="fas fa-info-circle fa-2x"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="btn btn-info" role="button">修改資料</a>
+                        <a href="#" class="btn btn-danger" role="button">刪除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>大陸地區</td>
+                    <td>重慶大學
+                        <br> Chongqing University</td>
+                    <td>10</i>
+                    </td>
+                    <td>
+                        <span class="no">不可申請</span>
+                    </td>
+                    <td>
+                        <a href="http://www.cqu.edu.cn/v1/">
+                            <i class="fas fa-info-circle fa-2x"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="btn btn-info" role="button">修改資料</a>
+                        <a href="#" class="btn btn-danger" role="button">刪除</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>港澳地區</td>
+                    <td>香港中文大學
+                        <br> The Chinese University of Hong Kong</td>
+                    <td>10</td>
+                    <td>
+                        <span class="yes">可申請</span>
+                    </td>
+                    <td>
+                        <a href="http://www.cuhk.edu.hk/chinese/">
+                            <i class="fas fa-info-circle fa-2x"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="btn btn-info" role="button">修改資料</a>
+                        <a href="#" class="btn btn-danger" role="button">刪除</a>
+                    </td>
+                </tr>
+
+
+            </table>
+        </div>
+</body>
+
+</html>

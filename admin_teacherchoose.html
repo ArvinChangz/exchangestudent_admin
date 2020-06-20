@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <link href="css/admin_teacherchoose.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <title>選擇審查教師</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap-select/dist/css/bootstrap-select.css">
+    <script>
+        function showMessage() {
+            alert("資料已儲存");
+        }
+    </script>
+</head>
+
+<body>
+    <br>
+    <h1>管理者專區</h1>
+    <br>
+    <br>
+    <div>
+        <p>
+
+            <i class="far fa-list-alt">
+
+            </i>&nbsp;&nbsp;選擇審查教師</p>
+    </div>
+
+    <div id="lefttable">
+        <h2>教師審查說明</h2>
+        <br>
+        <br>
+        <p1>◎ 請先確認選擇審查教師前學生皆已填寫完畢</p1>
+        <br>
+        <br>
+        <p2>◎ 點選後，系統將自動指派學生名單給審查教師</p2>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p3>目前已申請的學生數為 c 人</p3>
+    </div>
+
+    <div id="righttable">
+        <form action="#">
+            <table>
+                <tr>
+                    <td>
+                        選擇審查教師：
+                        <br>
+                        <br>
+                        <select class="selectpicker" multiple>
+                            <option>教師1</option>
+                            <option>教師2</option>
+                            <option>教師3</option>
+                            <option>教師4</option>
+                            <option>教師5</option>
+                            <option>教師6</option>
+                            <option>教師7</option>
+                        </select>
+                        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+                        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+                        <script type="text/javascript" src="bootstrap-select/dist/js/bootstrap-select.js"></script>
+                        <script>
+                            $(".selectpicker").selectpicker();
+                            $(".bootstrap-select").click(function () {
+                                $(this).addClass("open");
+                            });
+                            $(document).click(function () {
+                                $(".bootstrap-select").removeClass("open");
+                            });
+                            $(".bootstrap-select").click(function (e) {
+                                e.stopPropagation();
+                            });
+                        </script>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br>
+                        <br>
+                        <button type="submit" class="btn btn-success" onclick="showMessage()">儲存</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>

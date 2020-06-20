@@ -1,0 +1,49 @@
+h1 {
+    font-size: 30px;
+    text-align: center;
+}
+
+p {
+    background-color: rgba(0, 183, 255, 0.705);
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    border: 10px;
+    padding: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#lefttable{
+    position: relative;
+    top: 25px;
+    left: 30px;
+    width: 48%;
+    text-align: center;
+    
+}
+
+h2{
+    color: brown;
+    font-size: 40px;
+}
+
+p1, p2{
+    color: black;
+    font-size: 20px;
+}
+
+p3{
+    color: cadetblue;
+    font-size: 30px;
+}
+
+#righttable{
+    position: relative;
+    top: -200px;
+    right: -950px;
+    width: 48%;
+    font-size: 20px;
+    text-align: center;
+}

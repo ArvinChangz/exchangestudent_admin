@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>開放時間設定</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <link href="css/admin_timing.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/moment.js"></script>
+    <script type="text/javascript" src="js/collapse.js"></script>
+    <script type="text/javascript" src="js/transition.min.js"></script>
+    <script type="text/javascript" src="bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.min.js"></script>
+    <link rel="stylesheet" href="bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css">
+</head>
+
+<body>
+    <br>
+    <h1>管理者專區</h1>
+    <br>
+    <br>
+    <div>
+        <p>
+
+            <i class="far fa-list-alt">
+
+            </i>&nbsp;&nbsp;系統開放時間設定</p>
+    </div>
+    <div id="middletable">
+        <h2>系統開放時間設定</h2>
+        <br>
+        <p1>請輸入系統開放時間</p1>
+        <br>
+        <br>
+        <p2>格式 kkkkkk</p2>
+        <br>
+
+    </div>
+    <div id="downtable">
+        <form action="#">
+            <table>
+                <tr>
+                    <td>
+                        <div class="container">
+                            <form action="" class="form-horizontal" role="form">
+                                <fieldset>
+                                    <br>
+                                    <legend>&nbsp;</legend>
+                                    <div class="form-group" align="center">
+                                        <label>起始時間</label>
+                                        <div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p"
+                                            data-link-field="dtp_input1">
+                                            <input class="form-control" size="16" type="text" value="" readonly>
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </span>
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-th"></span>
+                                            </span>
+                                        </div>
+                                        <input type="hidden" id="dtp_input1" value="" />
+                                        <br/>
+                                    </div>
+                                    </fieldset>
+                                </div>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td>
+                                    <div class="form-group" align="center">
+                                        <label>結束時間</label>
+                                        <div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p"
+                                            data-link-field="dtp_input2">
+                                            <input class="form-control" size="16" type="text" value="" readonly>
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </span>
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-th"></span>
+                                            </span>
+                                        </div>
+                                        <input type="hidden" id="dtp_input2" value="" />
+                                        <br/>
+                                    </div>
+                                    </fieldset>
+                                    
+                                    </div>
+                                    </td>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td><button type="submit" class="btn btn-success" onclick="showMessage()">儲存</button></td>
+                </tr>
+            </table>
+            </form>
+            </div>
+            <script type="text/javascript" src="./jquery/jquery-1.8.3.min.js" charset="UTF-8"></script>
+            <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+            <script type="text/javascript" src="../js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+            <script type="text/javascript">
+                $('.form_datetime').datetimepicker({
+                    //language:  'fr',
+                    weekStart: 1,
+                    todayBtn: 1,
+                    autoclose: 1,
+                    todayHighlight: 1,
+                    startView: 2,
+                    forceParse: 0,
+                    showMeridian: 1
+                });
+                $('.form_date').datetimepicker({
+                    language: 'ch',
+                    weekStart: 1,
+                    todayBtn: 1,
+                    autoclose: 1,
+                    todayHighlight: 1,
+                    startView: 2,
+                    minView: 2,
+                    forceParse: 0
+                });
+                $('.form_time').datetimepicker({
+                    language: 'ch',
+                    weekStart: 1,
+                    todayBtn: 1,
+                    autoclose: 1,
+                    todayHighlight: 1,
+                    startView: 1,
+                    minView: 0,
+                    maxView: 1,
+                    forceParse: 0
+                });
+            </script>
+</body>
+
+</html>

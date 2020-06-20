@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <link href="css/admin_account_manage.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <title>帳號管理</title>
+    <script> 
+            function showhidediv(id){
+            try{
+            //先捉id='sbtitle'這個node
+            //var sbtitle=document.getElementById('sbtitle');
+            //捉sbtitle下所有的Node一個一個做判斷
+            var ar = document.getElementById("sbtitle").getElementsByTagName("div"); 
+            for (var i=0; i<ar.length; i++)
+            {
+            //沒設id的不處理，跳下一個
+            if (ar[i].id == '') continue;
+            if (ar[i].id == id)
+            {
+            if(ar[i].style.display=='block'){
+            ar[i].style.display='none';
+            }else{
+            ar[i].style.display='block';
+            }
+            }
+            else
+            {
+            ar[i].style.display='none';
+            }
+            }
+            }catch(e){}
+            }
+            
+            </script>
+</head>
+<body>
+        <br>
+        <h1>管理者專區</h1>
+        <br>
+        <br>
+    <div>
+            <p><span style="color: black"><i class="far fa-list-alt"></span></i>&nbsp;&nbsp;帳號列表</p>
+    </div>
+    <div id="sbtitle">
+    <div class="button_click">
+            <a href="#" class="btn btn-info" role="button" onclick='showhidediv("a1");'>新增帳號資料</a> 
+            <div id="a1" style="display:none;"> 
+                    <form type="post">
+                    <table align="center" id="pop" RULES="NONE">
+                        <tr>
+                            <td>姓名: <input type="text" name="username" required></td>
+                            <td>系級: <input type="text" name="userclass"></td>
+                            <td>學號: <input type="text" name="usernumber"></td>
+                            <td>
+                                <button type="reset" class="btn btn-primary"><span class="submitout">重設</span></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>帳號: <input type="text" name="useraccount" required></td>
+                            <td>密碼: <input type="password" name="userpassword" required></td>
+                            <td>權限: 
+                                <select name="property">
+                                    <option value="admin">管理者(admin)</option>
+                                    <option value="teacher">評分教師(teacher)</option>
+                                    <option value="student">學生(student)</option>
+                                </select>
+                            </td>
+                            <td>
+                                <button type="submit" class="btn btn-success"><span class="submitout">送出</span></button>
+                            </td>
+                        </tr>
+                        
+                    </table> 
+                    </form> 
+    </div>
+    </div>
+    <br>
+    
+    <div>
+            <table border="1" align="center"> 
+                <tr>
+                    <th>帳號</th>
+                    <th>姓名</th>
+                    <th>學號</th>
+                    <th>系級</th>
+                    <th>狀態</th>
+                    <th>修改密碼</th>
+                    <th>功能</th>
+                </tr>
+                <tr>
+                    <td>abbaabrrrl</td>
+                    <td>張嘉程</td>
+                    <td>406402153</td>
+                    <td>資管一乙</i></td>
+                    <td><i class="fas fa-check-circle fa-2x"></span></td> 
+                    <td><a href="#"><i class="fas fa-key fa-2x"></i></a></td>
+                    <td>
+                        <a href="#" class="btn btn-info" role="button">修改資料</a>
+                        <a href="#" class="btn btn-danger" role="button">刪除</a>
+                    </td>
+                </tr>
+                <tr>
+                        <td>jdkiloveporn</td>
+                        <td>呂承昊</td>
+                        <td>406402517</td>
+                        <td>資管一乙</i></td>
+                        <td><span class="error"><i class="fas fa-times-circle fa-2x"></i></span></td> 
+                        <td><a href="#"><i class="fas fa-key fa-2x"></i></a></td>
+                        <td>
+                            <a href="#" class="btn btn-info" role="button">修改資料</a>
+                            <a href="#" class="btn btn-danger" role="button">刪除</a>
+                        </td>
+                    </tr>
+                    <tr>
+                            <td>yoyoyoyoyoy</td>
+                            <td>郭子綾</td>
+                            <td>406402189</td>
+                            <td>資管一乙</i></td>
+                            <td><i class="fas fa-check-circle fa-2x"></i></td> 
+                            <td><a href="#"><i class="fas fa-key fa-2x"></i></a></td>
+                            <td>
+                                <a href="#" class="btn btn-info" role="button">修改資料</a>
+                                <a href="#" class="btn btn-danger" role="button">刪除</a>
+                            </td>
+                        </tr>
+            </table>
+        </div>
+</body>
+</html>

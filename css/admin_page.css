@@ -1,0 +1,22 @@
+h1 {
+    text-align: center;
+}
+
+td {
+    width: 15em;
+    height: 15em;
+    text-align: center;
+    
+}
+
+tr{
+    padding: 0;
+    margin: 0;
+    
+}
+
+a {
+    background-color: rgb(255, 255, 255);
+
+color: #000000;
+}

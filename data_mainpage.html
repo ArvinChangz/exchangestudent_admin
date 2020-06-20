@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <link href="css/data_mainpage.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <title>已申請資料</title>
+</head>
+<body>
+    <br>
+    <h1>管理者專區</h1>
+    <br>
+    <br>
+<div>
+        <p><span style="color: black"><i class="far fa-list-alt"></span></i>&nbsp;&nbsp;已申請資料</p>
+</div>
+    
+    
+    <div class="button_click">
+            <a href="#" class="btn btn-primary" role="button">新增申請資料</a>
+            <a href="#" class="btn btn-danger" role="button">產生排序</a>
+            
+    </div>
+
+    <div>
+        <table border="1"> 
+            <tr>
+                <th>學號</th>
+                <th>姓名</th>
+                <th>系所</th>
+                <th>狀態</th>
+                <th>在校平均</th>
+                <th>書審成績</th>
+                <th>功能 </th>
+            </tr>
+            <tr>
+                <td>406402153</td>
+                <td>張嘉程</td>
+                <td>資管一乙</td>
+                <td><span class="already">已繳交</span></td>
+                <td>96</td>
+                <td>null</td>
+                <td>
+                    <a href="#" class="btn btn-info" role="button">修改資料</a>
+                    <a href="#" class="btn btn-info" role="button">修改書審</a>
+                    <a href="#" class="btn btn-danger" role="button">刪除</a>
+                </td>
+            </tr>
+            <tr>
+                    <td>406402517</td>
+                    <td>呂承昊</td>
+                    <td>資管一乙</td>
+                    <td><span class="notyet">未繳交</span></td>
+                    <td>87</td>
+                    <td>null</td>
+                    <td>
+                        <a href="#" class="btn btn-info" role="button">修改資料</a>
+                        <a href="#" class="btn btn-info" role="button">修改書審</a>
+                        <a href="#" class="btn btn-danger" role="button">刪除</a>
+                    </td>
+                </tr>
+                <tr>
+                        <td>406402189</td>
+                        <td>郭子綾</td>
+                        <td>資管一乙</td>
+                        <td><span class="already">已繳交</span></td>
+                        <td>90</td>
+                        <td>null</td>
+                        <td>
+                            <a href="#" class="btn btn-info" role="button">修改資料</a>
+                            <a href="#" class="btn btn-info" role="button">修改書審</a>
+                            <a href="#" class="btn btn-danger" role="button">刪除</a>
+                        </td>
+                    </tr>
+        </table>
+    </div>
+    <div class="button_excel">
+            <a href="#" class="btn btn-warning" role="button">匯出成EXCEL檔</a>
+            
+            
+    </div>
+</body>
+</html>
