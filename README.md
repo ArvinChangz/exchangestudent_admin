@@ -1,4 +1,4 @@
-# 交換生系統（管理者端）
+# 交換生申請系統（管理者端） Exchange Student Appl System (Admin)
 
 為簡易交換生統管理者介面端
 
